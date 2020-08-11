@@ -46,8 +46,8 @@ class HomeViewController: UIViewController,JSONDelegate,CLLocationManagerDelegat
 
 	@IBAction func submitPressed(_ sender: Any) {
 
-//		guard let lat = locationManager?.location?.coordinate.latitude.description,let long = locationManager?.location?.coordinate.longitude.description else{return}
-			let searchQ = "term=\(searchController.searchBar.text!)&latitude=28.145491&longitude=-81.465767"
+		guard let lat = locationManager?.location?.coordinate.latitude.description,let long = locationManager?.location?.coordinate.longitude.description else{return}
+			let searchQ = "term=\(searchController.searchBar.text!)&latitude=\(lat)&longitude=\(long)"
 
 		networkCall(business: searchQ)
 	}
